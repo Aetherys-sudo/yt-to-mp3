@@ -11,6 +11,10 @@ mp4_path = f"{APP_PATH}/mp4s/"
 mp3_path = f"{APP_PATH}/mp3s/"
 mp4_tmp_path = f"{APP_PATH}/mp4s/new/"
 
+if not os.path.exists(mp3_path):
+    os.mkdir(mp3_path)
+
+
 def download(link):
     yt_opts = {
         'format': 'bestaudio',
