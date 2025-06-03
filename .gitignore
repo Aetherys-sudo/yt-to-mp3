@@ -3,3 +3,6 @@
 /my-env/
 data.txt
 ffmpeg-*
+/build/
+/dist/
+main.spec
