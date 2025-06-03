@@ -19,23 +19,14 @@ def download(link):
     yt_opts = {
         'format': 'bestaudio',
         'outtmpl': f"{mp4_tmp_path}%(title)s.%(ext)s",
-        'dump-single-json': True,
-        'restrictfilenames': True
     }
     
     with yt_dlp.YoutubeDL(yt_opts) as ydl:
         try:
-            object = ydl.extract_info(link, download=True)
             ydl.download(link)
         except:
             print("No object with the given link found. Exiting...")
             exit(-1)
-
-
-        title = object['title']
-        entries = {}
-        if 'entries' in object.keys():
-            entries = object['entries']
 
 
 def show_labels():
